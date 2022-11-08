@@ -1,0 +1,41 @@
+﻿@page
+@model AuthenticationProject.Pages.RegisterModel
+@{
+}
+
+<body>
+    <div class="row">
+        <div class="col-md-9">
+            <form method="post" class="form">
+                <div class="form-group">
+                    <label asp-for="Model.EmailId"></label>
+                    <input type="text" asp-for="Model.EmailId" />
+                    <span asp-validation-for="Model.EmailId" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label asp-for="Model.Password"></label>
+                    <input type="password" asp-for="Model.Password" />
+                    <span asp-validation-for="Model.Password" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label asp-for="Model.ConfirmPassword"></label>
+                    <input type="password" asp-for="Model.ConfirmPassword" />
+                    <span asp-validation-for="Model.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</body>
+@*
+@section scripts
+    {
+    <script>
+        $(document).ready(function () {
+            alert("Test");
+        });
+    </script>
+}
+*@
