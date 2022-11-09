@@ -15,5 +15,6 @@ namespace AuthenticationProject.Model
         [Required]
         [Compare("Password",ErrorMessage ="mismatch of password and confirm password")]
         public string ConfirmPassword { get; set; }
+        public string RoleName { get; set; }
     }
 }

@@ -10,6 +10,7 @@ builder.Services.AddDbContext<RDbContext>(option=>option.UseSqlServer(builder.Co
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<RDbContext>();
 builder.Services.ConfigureApplicationCookie(configure => {configure.LoginPath = "/Login"; configure.AccessDeniedPath = "/Accessdenied";
 }); 
+
 var app = builder.Build();
 
 

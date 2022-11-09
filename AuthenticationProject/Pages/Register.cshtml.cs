@@ -31,8 +31,10 @@ namespace AuthenticationProject.Pages
                     Email = Model.EmailId
                 };
                 var result = await _userManager.CreateAsync(user, Model.Password); 
+
                 if(result.Succeeded)
                 {
+                    var ResultAddtoRole = _userManager.AddToRoleAsync(user, Model.RoleName);
                     await _signInManager.SignInAsync(user,false);
                     RedirectToAction("Index");
                 }
@@ -40,7 +42,6 @@ namespace AuthenticationProject.Pages
                 {
                     RedirectToAction("Index");
                 }
-               //var result = Model;
             }
             return Page();
         }
